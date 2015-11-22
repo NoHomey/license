@@ -1,0 +1,46 @@
+div(layout="column" layout-align="center center")
+  div(layout="row" layout-align="center center")
+    md-input-container
+      label Position applied for
+      md-select(ng-model="register.reg.Possition" required)
+        md-option Floor Porter
+        md-option Room Attendant
+        md-option Floor Supervisor
+        md-option Office Co-ordinator
+        md-option Public Area
+        md-option Kitchen Porter
+        md-option Spa Attendant
+        md-option Waiter/ess
+        md-option Painter
+        md-option Other
+    md-input-container(ng-if="register.reg.Possition === 'Other'")
+      label Other Possition
+      input(ng-model="register.reg.posOther")
+    md-datepicker(ng-model="register.reg.Date" class="md-primary" ng-click="date = true", ng-change="date = false" ng-init="register.reg.Date = register.date()")
+  div(ng-hide="date" layout="column" layout-align="center center")
+    p Please read and choose one of statements and tick ONE box that applies to you at the:
+    md-button(ng-disabled="true" style={cursor: "auto"})
+    md-radio-group(ng-model="register.reg.Statement" class="md-primary" layout="column", layout-align="center center")
+      div(layout="row" layout-align="center center")
+        div(layout="column")
+          p This is my first job since 6 april and i have not been receiving taxable jobseeker`s 
+          p Allowance of taxable incapacity Benefit or a state or occupational pension
+        md-radio-button(ng-value="1")
+      md-button(ng-disabled="true" style={cursor: "auto"})
+      div(layout="row" layout-align="center center")
+        div(layout="column")
+          p This is now my only job, but since last 6 april i have had another job ot have
+          p received taxable jobseeker`s allowance or incapacity Benefit i do not
+          p receive a state ot occupation pension
+        md-radio-button(ng-value="2")
+      md-button(ng-disabled="true" style={cursor: "auto"})
+      div(layout="row" layout-align="center center")  
+        p I have another job or receive a state or occupation pension
+        md-radio-button(ng-value="3") 
+      md-button(ng-disabled="true" style={cursor: "auto"})
+      div(layout="row" layout-align="center center")
+        div(layout="column")
+          p if you left a course of higher education before last 6 april and received
+          p your first student loan instalment on or after 1 September 1998 and
+          p you have not fully repaid your Student loan tick this box
+        md-radio-button(ng-value="4")

@@ -1,0 +1,40 @@
+form(layout="column" layout-align="center center" layot-margin name="payment" novalidate)
+  div(layout="row")
+    md-input-container
+      label Account Holder Name
+      input(ng-model="register.reg.AccountHolderName" required ng-pattern="/^[A-Za-z]+$/" name="holder")
+      div(ng-messages="payment.holder.$error")
+        div(ng-message="required") Account Holder Name is required
+        div(ng-message="pattern") Account Holder Name can contain only letters
+    md-button(ng-disabled="true" style={cursor: "auto"})
+    md-input-container
+      label Bank Name
+      input(ng-model="register.bank" required)
+  div(layout="row" layout-align="space-between center")
+    md-input-container
+      label Account Number
+      input(ng-model="register.reg.AccountNumber" required ng-pattern="/^[0-9]+$/" ng-minlength="8" ng-max-length="8" name="number")
+      div(ng-messages="payment.number.$error")
+        div(ng-message="required") Account Number is required
+        div(ng-message="pattern") Account Number can contain only numbers
+        div(ng-message="maxlength") Account Number must be 8 numbers
+        div(ng-message="minlength") Account Number must be 8 numbers
+    md-button(ng-disabled="true" style={cursor: "auto"})
+    md-input-container
+      label Sort Code
+      input(ng-model="register.reg.SortCode" required ng-pattern="/^[0-9]+$/" ng-minlength="6" ng-max-length="6" name="code")
+      div(ng-messages="payment.code.$error")
+        div(ng-message="required") Sort Code is required
+        div(ng-message="pattern") Sort Code can contain only numbers
+        div(ng-message="maxlength") Sort Code must be 6 numbers
+        div(ng-message="minlength") Sort Code must be 6 numbers
+  md-button(ng-disabled="true" style={cursor: "auto"})
+  div(ng-hide="date" layout="column" layout-align="center center")
+    p How do you prefer to receve your payslip ? 
+    md-radio-group(ng-model="register.reg.Paylist" class="md-primary" layout="row", layout-align="center center")
+      div(layout="row")
+        p E-mail
+        md-radio-button(ng-value!="'email'") 
+      div(layout="row")
+        p Print
+        md-radio-button(ng-value!="'print'") 

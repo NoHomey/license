@@ -1,0 +1,64 @@
+form(layout="column" layout-align="center center" name="emergensy" novalidate)
+  div(layout="row" layout-align="center center")
+    md-input-container
+      label Title
+      md-select(ng-model="register.reg.EmergensyTitle" required)
+        md-option Mr
+        md-option Mrs
+        md-option Mis
+    md-input-container
+      label First name
+      input(ng-model="register.reg.EmergensyFirstName" required ng-pattern="/^[A-Z][a-z]/" ng-maxlength="10" name="firstname")
+      div(ng-messages="emergensy.firstname.$error")
+        div(ng-message="required") First name is required
+        div(ng-message="pattern") First name must start with a Capital letter
+        div(ng-message="maxlength") First name lenght must be less than 10 symbols
+    md-input-container
+      label Surname
+      input(ng-model="register.reg.EmergensySurname" required ng-pattern="/^[A-Z][a-z]/" ng-maxlength="10" name="surname")
+      div(ng-messages="emergensy.surname.$error")
+        div(ng-message="required") Surname is required
+        div(ng-message="pattern") Surname must start with a Capital letter
+        div(ng-message="maxlength") Surname lenght must be less than 10 symbols
+  div(layout="row")
+    md-input-container
+      label Mobile number
+      input(ng-model="register.reg.EmergensyMobileNumber" required ng-pattern="/^[0-9]+$/" name="mobile")
+      div(ng-messages="emergensy.mobile.$error")
+        div(ng-message="required") Mobile number is required
+        div(ng-message="pattern") Mobile number can contain only numbers
+    md-input-container
+      label Your releationship to candidate
+      md-select(ng-model="register.reg.EmergensyRelation")
+        md-option(ng-repeat!="o in register.relation") {{o}}
+    md-input-container(ng-show="register.reg.emergensy.relation === 'Other'")
+      label Other
+      input(ng-model="egister.reg.EmergensyRelationOther")
+  div(layout="column")
+    md-switch(ng-model="register.same" ng-change="register.autoFill(register.same, register.reg)" class="md-primary") The same as above
+    div(layout="column")
+      md-input-container
+        label Addres
+        input(ng-model="register.reg.EmergensyAddress")
+      md-input-container
+        label Addres Line 2
+        input(ng-model="register.reg.EmergensyAddressLine2")
+    div(layout="row")
+      md-input-container
+        label Town/City
+        input(ng-model="register.reg.EmergensyTown" required ng-pattern="/^[A-Za-z]+$/" name="town")
+        div(ng-messages="emergensy.town.$error")
+          div(ng-message="required") Town/City is required
+          div(ng-message="pattern") Town/City can contain only letters
+      md-button(ng-disabled="true" style={cursor: "auto"})
+      md-input-container
+        label Post code
+        input(ng-model="register.reg.EmergensyPostCode" required name="post")
+        div(ng-messages="emergensy.post.$error")
+          div(ng-message="required") Post code is required
+    md-input-container
+      label Email
+      input(ng-model="register.reg.EmergensyEmail" type="email" name="email" required)
+      div(ng-messages="emergensy.email.$error")
+        div(ng-message="required") Email is required
+        div(ng-message="pattern") Not a valid Email

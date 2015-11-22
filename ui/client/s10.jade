@@ -1,0 +1,12 @@
+div(layout="column" layout-align="center center")
+  div(ng-repeat="q in register.health" layout="column" layout-align="center start")
+    p {{q}}
+    div(layout="row" layout-align="center center")
+      md-input-container(layout-padding)
+        md-select(ng-model="register.reg.health[$index].Answer" aria-label="$index")
+          md-option Yes
+          md-option No
+      md-input-container(ng-if="register.reg.health[$index].Answer === 'Yes'" flex="100")
+        label Answer
+        input(ng-model="register.reg.health[$index].Yes")
+    

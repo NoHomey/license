@@ -1,0 +1,29 @@
+{spawnSync, spawn} = require "child_process"
+
+task "coffee", "Compiles coffee -> js", () -> spawnSync "coffee", ["-c", "-b", "./client"], stdio: "inherit"
+
+task "jade", "Compiles jade -> html", () -> spawnSync "jade", ["./client"], stdio: "inherit"
+
+task "cmp", "Compiles all", () ->
+  invoke "jade"
+  invoke "templates"
+  invoke "coffee"
+  spawnSync "browserify", ["./client/app.js", "-o", "./client/bundle.js"], stdio: "inherit"
+
+
+task "templates", "T", ->
+  {walk} = require "walk"
+  {join} = require "path"
+  fs = require "fs"
+  client = join __dirname, "./client"
+  walker = walk client
+  map = {}
+  walker.on "file", (root, file, next) ->
+    info = file.name.split "."
+    if info[1] is "html" and info[0] not in ["index", "error"]
+      path = join root, file.name
+      map[info[0]] = fs.readFileSync path, "utf8"
+    next()
+  walker.on "end", ->
+    file = join client, "template.coffee"
+    fs.writeFileSync file, "map = #{JSON.stringify map}\nmodule.exports = (tmp) -> map[tmp]"

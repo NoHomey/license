@@ -1,0 +1,9 @@
+div {{register.reg | json}}
+div(layout="row")
+  ui_view(layout:fill)
+  div(layout="column")
+    md_button(ng:repeat!="btn in register.btns" ng:click="register.go(register.state[$index], $index)" class="md-primary" ng-class!="register.select[$index] ? 'md-raised' : ''") {{btn}}
+div(layout="row" layout-fill layout-align="space-around center")
+  md-button(ng-click="register.prev()" class="md-raised md-warn") Previus
+  md-button(ng-click="register.next()" class="md-raised md-primary") Next
+    

@@ -1,0 +1,29 @@
+div(layout="row" layout-align="center center")
+  div(layout="column")
+    md-input-container
+      label How did you find out about us ?
+      md-select(ng-model="register.reg.FindUs")
+        md-option KMS Staffs
+        md-option Other
+        md-option Newspaper
+    md-input-container(ng-if="register.reg.FindUs === 'KMS Staffs' || register.reg.FindUs === 'Other'")
+      label Enter
+      input(ng-model="register.reg.findOther")
+    div(layout="column")
+      p Do you have any commitments that may limit you working hours?
+      md-input-container
+        label commitments
+        input(ng-model="register.reg.Limit")
+  md-button(ng-disabled="true" style={cursor: "auto"})
+  div(layout="column")
+    div(layout="row")
+      p Are you able and willing to work overtime and weekends when required ?
+      md-input-container(aria-label="overtime")
+        md-select(ng-model="register.reg.WorkOvertime")
+          md-option Yse
+          md-option No
+    div(layout="column")
+      p How much notice are you required to give when leaving your present employment ?
+      md-input-container
+        label notice
+        input(ng-model="register.reg.Notice")

@@ -1,0 +1,11 @@
+div(layout="column" layout-align="center center")
+  div(layout="row" layout-align="start")
+    md-checkbox(ng-model="register.reg.Agree" class="md-primary")
+    div(layout="column" layout-align="center")
+      p I confirm that I am legally allowed to work in the UK
+      p and that the above information is corect, and any
+      p misleading deliberate omission maybe suffiecent
+      p for com celling this agriment.
+      p I give permission for references to be taken
+      p or under go medical it asked to do so.
+  md-button(class="md-raised md-primary" ng-disabled="!register.reg.Agree" ng-click="register.submit(register.reg, register.state, register.go)") Submit

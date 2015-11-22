@@ -1,0 +1,23 @@
+div(layout="column" layout-align="center center")
+  div(ng-repeat="i in [] | range:register.empl" layout="column" layout-align="center center")
+    div(layout="row")
+      md-input-container
+        label Company
+        input(ng-model="register.reg.Employmnet[$index].Company" required)
+      md-input-container
+        label Position
+        input(ng-model="register.reg.Employmnet[$index].Position" required)
+      md-input-container
+        label Reason For Leaving
+        input(ng-model="register.reg.Employmnet[$index].ReasonForLeaving")
+      md-datepicker(ng-model="register.reg.Employmnet[$index].FromDate" ng-init="register.reg.Employmnet[$index].FromDate = register.date()")
+    div(layout="row")
+      md-input-container
+        label Company Manager Name
+        input(ng-model="register.reg.Employmnet[$index].CompanyManagerName" required)
+      md-input-container
+        label Company Telephne/Webpage
+        input(ng-model="register.reg.Employmnet[$index].CompanyContact" required)
+      md-datepicker(ng-model="register.reg.Employmnet[$index].ToDate" ng-init="register.reg.Employmnet[$index].ToDate = register.date()")
+    md-button(ng-disabled="true" style={cursor: "auto"})
+  md-button(ng-click="register.inc()" class="md-primary") Add

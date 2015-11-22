@@ -1,0 +1,10 @@
+div(layout="row" layout-align="center center")
+  div(ng-repeat="i in [] | range:register.len" layout="row" layout-align="center center")
+    md-input-container
+      label Lenguage
+      md-select(ng-model="register.reg.lenguage[$index].lenguage" required)
+        md-option(ng-repeat="o in ['English', 'German', 'Spanish', 'French', 'Russina', 'Bulgarian', 'Other']") {{o}}
+    md-input-container(ng-show="register.reg.lenguage[$index].lenguage === 'Other'")
+      label Other
+      input(ng-model="register.reg.lenguage[$index].other" required)
+  md-button(ng-click="register.incl()" class="md-primary") Add

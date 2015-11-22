@@ -1,0 +1,9 @@
+div(ng-hide="date" layout="column" layout-align="center center")
+  p Have you ever been convicted of a criminal offence ?
+  md-radio-group(ng-model="register.reg.Legal" class="md-primary" layout="row", layout-align="center center")
+    div(layout="row")
+      p Yes
+      md-radio-button(ng-value!="'Yes'") 
+    div(layout="row")
+      p No
+      md-radio-button(ng-value!="'No'") 

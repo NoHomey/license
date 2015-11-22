@@ -1,0 +1,54 @@
+div(layout="column" layout-align="center center")
+  div(layout="row")
+    div(layout="column")
+      md-input-container
+        label Company Name
+        input(ng-model="register.reg.CompanyName") 
+      md-input-container
+        label Contact Name
+        input(ng-model="register.reg.ContactName" required)
+      md-input-container
+        label Phone Number
+        input(ng-model="register.reg.ContactNumber" required)
+    md-button(ng-disabled="true" style={cursor: "auto"})
+    div(layout="column")
+      md-input-container
+        label Location
+        input(ng-model="register.reg.Location")
+      md-input-container
+        label Position
+        input(ng-model="register.reg.ContactPosition" required)
+      md-input-container
+        label E-mail
+        input(ng-model="register.reg.ContactEmail")
+  div(layout="column")
+    div(layout="column" layout-align="center center")
+      p Employment Period From/to
+      div(layout="row")
+        md-datepicker(ng-model="register.reg.EmploymentFrom" ng-init="register.reg.EmploymentFrom = register.date()")
+        md-datepicker(ng-model="register.reg.EmploymentTo" ng-init="register.reg.EmploymentTo = register.date()")
+    md-input-container(layout-fill)
+      label Reason For Leaving
+      input(ng-model="register.reg.ReasonForLeaving" required)
+  div(layout="column")
+    h2 Charecter Reference
+    div(layout="row")
+      md-input-container
+        label Contact Name
+        input(ng-model="register.ContactName" required)
+      md-button(ng-disabled="true" style={cursor: "auto"})
+      md-input-container
+        label Surname
+        input(ng-model="register.ContactSurname" required)
+    div(layout="row" layout-align="space-between center")
+      md-input-container
+        label Mobile Number
+        input(ng-model="register.ContactMobileNuber" required)
+      div(layout="row" layout-align="center center")
+        md-input-container
+          label Your releationship to candidate
+          md-select(ng-model="register.reg.ContactRelation")
+            md-option(ng-repeat!="o in register.relation") {{o}}
+        md-input-container(ng-show="register.reg.ContactRelation === 'Other'")
+          label Other
+          input(ng-model="egister.reg.ContactRelationOther")

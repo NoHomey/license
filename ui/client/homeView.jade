@@ -1,0 +1,4 @@
+div(layout="column" layout:align="space-between center")
+  div(layout="row" layout:align="center center")
+    md_button(ng:repeat!="btn in home.btns" ng:click="home.go(btn, $index)" class="md-primary" ng-class!="home.select[$index] ? 'md-raised' : ''") {{btn}}
+  ui_view(layout:fill)

@@ -1,0 +1,96 @@
+form(layout="column" layout-align="center center" name="person" novalidate)
+  div(layout="row" layout-align="space-between center")
+    md-input-container
+      label Title
+      md-select(ng-model="register.reg.Title" required)
+        md-option Mr
+        md-option Mrs
+        md-option Mis
+    md-input-container
+      label First name
+      input(ng-model="register.reg.FirstName" required ng-pattern="/^[A-Z][a-z]/" ng-maxlength="10" name="firstname")
+      div(ng-messages="person.firstname.$error")
+        div(ng-message="required") First name is required
+        div(ng-message="pattern") First name must start with a Capital letter
+        div(ng-message="maxlength") First name lenght must be less than 10 symbols
+    md-input-container
+      label Second name
+      input(ng-model="register.reg.SecondName" required ng-pattern="/^[A-Z][a-z]/" ng-maxlength="15" name="secondname")
+      div(ng-messages="person.secondname.$error")
+        div(ng-message="required") Second name is required
+        div(ng-message="pattern") Second name must start with a Capital letter
+        div(ng-message="maxlength") Second name lenght must be less than 15 symbols
+    md-input-container
+      label Surname
+      input(ng-model="register.reg.Surname" required ng-pattern="/^[A-Z][a-z]/" ng-maxlength="10" name="surname")
+      div(ng-messages="person.surname.$error")
+        div(ng-message="required") Surname is required
+        div(ng-message="pattern") Surname must start with a Capital letter
+        div(ng-message="maxlength") Surname lenght must be less than 10 symbols
+  div(layout="row" layout-align="center center")
+    md-input-container(flex="75")
+      label Gender
+      md-select(ng-model="register.reg.Gender" required)
+        md-option M
+        md-option F
+    md-input-container(flex="75")
+      label Nationality
+      md-select(ng-model="register.reg.Nationality" required)
+        md-option American
+        md-option Bulgarian
+        md-option German
+        md-option Romanian
+        md-option Other
+    md-input-container(ng-if="register.reg.Nationality === 'Other'")
+      label Nationality
+      input(ng-model="register.reg.natOther" required)
+    md-input-container(flex="75")
+      label Status
+      md-select(ng-model="register.reg.Title" required)
+        md-option Single
+        md-option Married
+        md-option Divorced
+        md-option Widowed
+  div(layout="row")
+    md-input-container
+      label Mobile number
+      input(ng-model="register.reg.MobileNumber" required ng-pattern="/^[0-9]+$/" name="mobile")
+      div(ng-messages="person.mobile.$error")
+        div(ng-message="required") Mobile number is required
+        div(ng-message="pattern") Mobile number can contain only numbers
+    md-input-container
+      label Second Mobile/Telephone number
+      input(ng-model="register.reg.MobileNmber2" required ng-pattern="/^[0-9]+$/" name="mobile2")
+      div(ng-messages="person.mobile2.$error")
+        div(ng-message="required") Second Mobile/Telephone number is required
+        div(ng-message="pattern") Second Mobile/Telephone number can contain only numbers
+    md-input-container
+      label National inshurance Number
+      input(ng-model="register.reg.NationalInshuranceNumber" required)
+  div(layout="column")
+    div(layout="column")
+      md-input-container
+        label Addres
+        input(ng-model="register.reg.Address")
+      md-input-container
+        label Addres Line 2
+        input(ng-model="register.reg.AddressLine2")
+    div(layout="row")
+      md-input-container
+        label Town/City
+        input(ng-model="register.reg.Town" required ng-pattern="/^[A-Za-z]+$/" name="town")
+        div(ng-messages="person.town.$error")
+          div(ng-message="required") Town/City is required
+          div(ng-message="pattern") Town/City can contain only letters
+      md-button(ng-disabled="true" style={cursor: "auto"})
+      md-input-container
+        label Post code
+        input(ng-model="register.reg.PostCode" required name="post")
+        div(ng-messages="person.post.$error")
+          div(ng-message="required") Post code is required
+    md-input-container
+      label Email
+      input(ng-model="register.reg.Email" type="email" name="email" required)
+      div(ng-messages="person.email.$error")
+        div(ng-message="required") Email is required
+        div(ng-message="pattern") Not a valid Email

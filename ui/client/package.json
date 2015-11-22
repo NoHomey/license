@@ -1,0 +1,33 @@
+{
+  "name": "placeholder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NoHomey/diplomna3.git"
+  },
+  "author": "NoHomey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NoHomey/diplomna3/issues"
+  },
+  "homepage": "https://github.com/NoHomey/diplomna3#readme",
+  "dependencies": {
+    "browserify": "12.0.1",
+    "walk": "2.3.9",
+    "fs-extra": "0.26.0",
+    "stylus": "0.52.4",
+    "nib": "1.1.0",
+    "ng-file-upload": "10.0.2",
+    "ui-router": "0.2.15",
+    "angular": "1.4.8",
+    "angular-messages": "1.4.8",
+    "angular-aria": "1.4.8",
+    "angular-animate": "1.4.8",
+    "angular-material": "0.11.4"
+  }
+}
