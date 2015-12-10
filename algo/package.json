@@ -1,0 +1,58 @@
+{
+  "name": "placeholder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NoHomey/diplomna3.git"
+  },
+  "author": "NoHomey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NoHomey/diplomna3/issues"
+  },
+  "homepage": "https://github.com/NoHomey/diplomna3#readme",
+  "dependencies": {
+    "body-parser": "1.13.2",
+    "express": "4.13.1",
+    "mongoose": "4.2.6",
+    "promise" : "7.0.4",
+    "uglify-js": "2.6.1",
+    "uglifycss": "0.0.18",
+    "browserify": "12.0.1",
+    "walk": "2.3.9",
+    "fs-extra": "0.26.0",
+    "multer": "1.1.0",
+    "stylus": "0.52.4",
+    "nib": "1.1.0",
+    "gerber-parser": "0.1.2",
+    "gerber-to-svg": "0.4.2",
+    "pcb-stackup": "0.0.3",
+    "ng-file-upload": "10.1.9",
+    "jquery": "2.1.4",
+    "ui-router": "0.2.15",
+    "lodash": "3.10.1",
+    "angular": "1.4.8",
+    "angular-messages": "1.4.8",
+    "angular-aria": "1.4.8",
+    "angular-animate": "1.4.8",
+    "angular-material": "0.11.4",
+    "angular-translate": "2.8.1"
+  },
+  "browser": {
+    "safe-ng-file-upload": "./node_modules/ng-file-upload/dist/ng-file-upload.min.js",
+    "safe-angular": "./node_modules/angular/angular.min.js",
+    "safe-angular-animate": "./node_modules/angular-animate/angular-animate.min.js",
+    "safe-angular-aria": "./node_modules/angular-aria/angular-aria.min.js",
+    "safe-angular-messages": "./node_modules/angular-messages/angular-messages.min.js",
+    "safe-angular-material": "./node_modules/angular-material/angular-material.min.js",
+    "safe-ng-file-upload": "./node_modules/ng-file-upload/dist/ng-file-upload-all.min.js",
+    "ui-router": "./node_modules/ui-router/release/angular-ui-router.min.js",
+    "angular-translate": "./node_modules/angular-translate/dist/angular-translate.min.js",
+    "dependencies": "./client/dependencies.js"
+  }
+}

@@ -1,0 +1,29 @@
+@import "nib"
+@require "colors"
+@require "mixins"
+
+.box
+  border solid 1px black-clr
+  width 30px
+  height 30px
+
+.red-untouched
+  background-color red-clr
+
+.red-touched
+  background-color lighten(red-clr, 50%)
+
+.blue-untouched
+  background-color blue-clr
+
+.blue-untouched
+  background-color lighten(blue-clr, 50%)
+
+.greeen-untouched
+  background-color green-clr
+
+.green-untouched
+  background-color lighten(green-clr, 50%)
+
+.default
+  background-color default-clr

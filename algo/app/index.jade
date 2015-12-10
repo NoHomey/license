@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title test
+    meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui")
+  body(ng-controller="main" layout-fill)
+    div(ng-if="!start" layout="column" layout-align="center center")
+      md-input-container
+        label X
+        input(ng-model="x" type="number")
+      md-input-container
+        label Y
+        input(ng-model="y" type="number")
+      md-button(ng-click="run(x, y)" class="md-primary") Draw
+    div(ng-if="start" layout="column" layout-margin layout-padding flex-offset="35" layout-align="center center" layout-fill)
+      div(layout="column" layout-align="center center")
+        div(ng-repeat="i in range(x)" layout="row" layout-align="center center")
+          div(ng-repeat="j in range(y)" ng-click="draw(i, j)" class="box" ng-class="class(i, j)" flex="auto")
+      md-button(ng-click="go()" class="md-primary") Start
+    style @@@
+    script(src="./final.js")
